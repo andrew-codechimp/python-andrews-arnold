@@ -22,6 +22,17 @@ This package allows you to fetch data from your Andrews & Arnold broadband accou
 pip install aioandrewsarnold
 ```
 
+## Usage
+```python
+from aioandrewsarnold.andrewsarnold import AndrewsArnoldClient, QuotaResponse
+
+client = AndrewsArnoldClient(
+    control_login="something@a", control_password="password"
+)
+
+quota_response = await client.get_quotas()
+```
+
 ## Changelog & Releases
 
 This repository keeps a change log using [GitHub's releases][releases]
