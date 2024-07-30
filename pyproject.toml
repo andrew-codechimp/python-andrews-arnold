@@ -9,7 +9,7 @@ readme = "README.md"
 homepage = "https://github.com/andrew-codechimp/python-andrews-arnold"
 repository = "https://github.com/andrew-codechimp/python-andrews-arnold"
 documentation = "https://github.com/andrew-codechimp/python-andrews-arnold"
-keywords = ["mealie", "api", "async", "client"]
+keywords = ["broadband", "api", "async", "client"]
 classifiers = [
   "Development Status :: 5 - Production/Stable",
   "Framework :: AsyncIO",
