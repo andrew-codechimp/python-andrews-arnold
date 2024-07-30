@@ -6,5 +6,5 @@ ANDREWS_ARNOLD_URL = "https://chaos2.aa.net.uk"
 
 HEADERS = {
     "User-Agent": f"AioAndrewsArnold/{VERSION}",
-    "Accept": "application/json, text/plain, */*",
+    "Content-Type": "application/json",
 }

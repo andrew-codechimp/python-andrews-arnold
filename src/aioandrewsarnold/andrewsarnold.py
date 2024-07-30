@@ -53,7 +53,7 @@ class AndrewsArnoldClient:
         }
 
         if not data:
-            data: dict[str, Any] = {}
+            data = {}
 
         if self.control_login and self.control_password:
             data["control_login"] = self.control_login

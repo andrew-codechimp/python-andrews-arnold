@@ -6,6 +6,7 @@ import asyncio
 from typing import TYPE_CHECKING, Any
 
 import aiohttp
+from aiohttp.hdrs import METH_POST
 from aioresponses import CallbackResult, aioresponses
 import pytest
 from yarl import URL
@@ -18,7 +19,7 @@ from aioandrewsarnold.exceptions import (
 from aioandrewsarnold.andrewsarnold import AndrewsArnoldClient
 from tests import load_fixture
 
-from .const import ANDREWS_ARNOLD_URL
+from .const import ANDREWS_ARNOLD_URL, HEADERS
 
 if TYPE_CHECKING:
     from syrupy import SnapshotAssertion
@@ -128,4 +129,10 @@ async def test_quotas(
     )
     assert await client.get_quotas() == snapshot
 
-    responses.assert_called_once()
+    responses.assert_called_once_with(
+        f"{ANDREWS_ARNOLD_URL}/broadband/quota",
+        METH_POST,
+        headers=HEADERS,
+        params=None,
+        json={"control_login": "test", "control_password": "test"},
+    )
