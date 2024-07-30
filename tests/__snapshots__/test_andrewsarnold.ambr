@@ -1,0 +1,13 @@
+# serializer version: 1
+# name: test_quotas
+  dict({
+    'error': None,
+    'quotas': list([
+      dict({
+        'quota_id': '54321',
+        'quota_monthly': '10000000000000',
+        'quota_remaining': '18897654553833',
+      }),
+    ]),
+  })
+# ---

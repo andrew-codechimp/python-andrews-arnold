@@ -1,0 +1,107 @@
+{
+    "subsystem": "broadband",
+    "command": "quota",
+    "request": {
+        "control_login": "something@a",
+        "control_password": "(redacted)",
+        "uuid": "aba0f976-4dd1-12ef-9957-525600c764e2",
+        "seq": "1"
+    },
+    "prices": {
+        "vat_preferred": "inc",
+        "price": [
+            {
+                "name": "install",
+                "title": "Installation\/set-up",
+                "description": ""
+            },
+            {
+                "name": "adjust",
+                "title": "Current bill adjustment",
+                "description": ""
+            },
+            {
+                "name": "goods",
+                "title": "Goods price",
+                "description": ""
+            },
+            {
+                "name": "equip",
+                "title": "Equipment price",
+                "description": ""
+            },
+            {
+                "name": "shipping",
+                "title": "Postage",
+                "description": ""
+            },
+            {
+                "name": "monthly",
+                "suffix": "\/month",
+                "title": "Ongoing price",
+                "description": ""
+            },
+            {
+                "name": "active",
+                "suffix": "\/month",
+                "title": "Ongoing if all activated",
+                "description": ""
+            }
+        ]
+    },
+    "state": {
+        "uuid": "aba0f976-4dd1-12ef-9957-525600c764e2",
+        "seq": "1"
+    },
+    "options": [
+        {
+            "title": "Authentication",
+            "option": [
+                {
+                    "name": "control_login",
+                    "type": "text",
+                    "title": "Control login (e.g. something@a)",
+                    "size": "60",
+                    "value": "something@a"
+                },
+                {
+                    "name": "control_password",
+                    "type": "hidden",
+                    "title": "Control password"
+                }
+            ]
+        },
+        {
+            "title": "Service",
+            "option": [
+                {
+                    "name": "service",
+                    "type": "select",
+                    "title": "Service identifier",
+                    "recheck": "true",
+                    "choice": [
+                        {
+                            "value": "",
+                            "title": "Select service"
+                        },
+                        {
+                            "value": "54321",
+                            "title": "EX1 4MP something@a"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Service Details"
+        }
+    ],
+    "quota": [
+        {
+            "ID": "54321",
+            "quota_monthly": "10000000000000",
+            "quota_remaining": "18897654553833",
+            "quota_timestamp": "2024-07-29 14:00:00"
+        }
+    ]
+}

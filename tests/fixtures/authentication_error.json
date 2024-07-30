@@ -1,0 +1,77 @@
+{
+    "subsystem": "broadband",
+    "command": "quota",
+    "request": {
+        "control_login": "something@a",
+        "control_password": "(redacted)",
+        "uuid": "1239c952-4dc3-12ef-889f-527400c768e2",
+        "seq": "1"
+    },
+    "prices": {
+        "vat_preferred": "inc",
+        "price": [
+            {
+                "name": "install",
+                "title": "Installation\/set-up",
+                "description": ""
+            },
+            {
+                "name": "adjust",
+                "title": "Current bill adjustment",
+                "description": ""
+            },
+            {
+                "name": "goods",
+                "title": "Goods price",
+                "description": ""
+            },
+            {
+                "name": "equip",
+                "title": "Equipment price",
+                "description": ""
+            },
+            {
+                "name": "shipping",
+                "title": "Postage",
+                "description": ""
+            },
+            {
+                "name": "monthly",
+                "suffix": "\/month",
+                "title": "Ongoing price",
+                "description": ""
+            },
+            {
+                "name": "active",
+                "suffix": "\/month",
+                "title": "Ongoing if all activated",
+                "description": ""
+            }
+        ]
+    },
+    "state": {
+        "uuid": "1239c952-4dc3-12ef-889f-527400c768e2",
+        "seq": "1"
+    },
+    "options": [
+        {
+            "title": "Authentication",
+            "option": [
+                {
+                    "name": "control_login",
+                    "type": "text",
+                    "title": "Control login (e.g. something@a)",
+                    "size": "60",
+                    "value": "something@a",
+                    "error": "Control authorisation failed"
+                },
+                {
+                    "name": "control_password",
+                    "type": "password",
+                    "title": "Control password"
+                }
+            ]
+        }
+    ],
+    "error": "Control authorisation failed"
+}
