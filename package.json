@@ -1,6 +1,6 @@
 {
   "name": "python-andrews-arnold",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "description": "Asynchronous Python client for Andrews & Arnold Broadband.",
   "scripts": {
