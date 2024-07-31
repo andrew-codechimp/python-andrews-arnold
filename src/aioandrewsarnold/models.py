@@ -23,6 +23,6 @@ class QuotaResponse(DataClassORJSONMixin):
 class Quota(DataClassORJSONMixin):
     """Quota model."""
 
-    quota_id: str = field(metadata=field_options(alias="ID"))
+    service_id: str = field(metadata=field_options(alias="ID"))
     quota_monthly: str = field(metadata=field_options(alias="quota_monthly"))
     quota_remaining: str = field(metadata=field_options(alias="quota_remaining"))
