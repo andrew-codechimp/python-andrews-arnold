@@ -119,15 +119,15 @@ class AndrewsArnoldClient:
     async def get_info(
         self,
     ) -> InfoResponse:
-        """Get quotas."""
+        """Get info."""
         response = await self._request("broadband/info")
 
-        quota_response = InfoResponse.from_json(response)
-        if quota_response.error:
-            if quota_response.error == "Control authorisation failed":
+        info_response = InfoResponse.from_json(response)
+        if info_response.error:
+            if info_response.error == "Control authorisation failed":
                 raise AndrewsArnoldAuthenticationError
-            raise AndrewsArnoldError(quota_response.error)
-        return quota_response
+            raise AndrewsArnoldError(info_response.error)
+        return info_response
 
     async def close(self) -> None:
         """Close open client session."""
