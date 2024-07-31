@@ -19,7 +19,7 @@ from aioandrewsarnold.exceptions import (
     AndrewsArnoldNotFoundError,
     AndrewsArnoldBadRequestError,
 )
-from aioandrewsarnold.models import QuotaResponse
+from aioandrewsarnold.models import InfoResponse
 
 
 VERSION = metadata.version(__package__)
@@ -116,13 +116,13 @@ class AndrewsArnoldClient:
 
         return await response.text()
 
-    async def get_quotas(
+    async def get_info(
         self,
-    ) -> QuotaResponse:
+    ) -> InfoResponse:
         """Get quotas."""
-        response = await self._request("broadband/quota")
+        response = await self._request("broadband/info")
 
-        quota_response = QuotaResponse.from_json(response)
+        quota_response = InfoResponse.from_json(response)
         if quota_response.error:
             if quota_response.error == "Control authorisation failed":
                 raise AndrewsArnoldAuthenticationError

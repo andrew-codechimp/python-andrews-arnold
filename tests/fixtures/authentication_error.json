@@ -1,10 +1,10 @@
 {
     "subsystem": "broadband",
-    "command": "quota",
+    "command": "info",
     "request": {
         "control_login": "something@a",
         "control_password": "(redacted)",
-        "uuid": "1239c952-4dc3-12ef-889f-527400c768e2",
+        "uuid": "2e9954e98-4f24-17bf-a598-525371c768e2",
         "seq": "1"
     },
     "prices": {
@@ -50,7 +50,7 @@
         ]
     },
     "state": {
-        "uuid": "1239c952-4dc3-12ef-889f-527400c768e2",
+        "uuid": "2e9954e98-4f24-17bf-a598-525371c768e2",
         "seq": "1"
     },
     "options": [

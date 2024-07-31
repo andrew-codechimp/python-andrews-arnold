@@ -1,12 +1,14 @@
 # serializer version: 1
-# name: test_quotas
+# name: test_info
   dict({
     'error': None,
-    'quotas': list([
+    'services': list([
       dict({
+        'login': 'something4@a',
+        'postcode': 'XX1 1XX',
         'quota_monthly': '10000000000000',
-        'quota_remaining': '18897654553833',
-        'service_id': '54321',
+        'quota_remaining': '18881390851534',
+        'service_id': '12345',
       }),
     ]),
   })

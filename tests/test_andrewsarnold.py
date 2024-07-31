@@ -30,9 +30,9 @@ async def test_authentication_error(
     client: AndrewsArnoldClient,
     snapshot: SnapshotAssertion,
 ) -> None:
-    """Test retrieving quotas but not authorized."""
+    """Test retrieving info but not authorized."""
 
-    url = URL(ANDREWS_ARNOLD_URL).joinpath("broadband/quota")
+    url = URL(ANDREWS_ARNOLD_URL).joinpath("broadband/info")
     responses.post(
         url,
         status=200,
@@ -40,7 +40,7 @@ async def test_authentication_error(
     )
 
     with pytest.raises(AndrewsArnoldAuthenticationError):
-        assert await client.get_quotas() == snapshot
+        assert await client.get_info() == snapshot
 
 
 async def test_putting_in_own_session(
@@ -48,13 +48,13 @@ async def test_putting_in_own_session(
 ) -> None:
     """Test putting in own session."""
     responses.post(
-        f"{ANDREWS_ARNOLD_URL}/broadband/quota",
+        f"{ANDREWS_ARNOLD_URL}/broadband/info",
         status=200,
-        body=load_fixture("broadband_quota.json"),
+        body=load_fixture("broadband_info.json"),
     )
     async with aiohttp.ClientSession() as session:
         client = AndrewsArnoldClient(session=session)
-        await client.get_quotas()
+        await client.get_info()
         assert client.session is not None
         assert not client.session.closed
         await client.close()
@@ -66,12 +66,12 @@ async def test_creating_own_session(
 ) -> None:
     """Test creating own session."""
     responses.post(
-        f"{ANDREWS_ARNOLD_URL}/broadband/quota",
+        f"{ANDREWS_ARNOLD_URL}/broadband/info",
         status=200,
-        body=load_fixture("broadband_quota.json"),
+        body=load_fixture("broadband_info.json"),
     )
     client = AndrewsArnoldClient(control_login="XXX", control_password="XXX")
-    await client.get_quotas()
+    await client.get_info()
     assert client.session is not None
     assert not client.session.closed
     await client.close()
@@ -84,13 +84,13 @@ async def test_unexpected_server_response(
 ) -> None:
     """Test handling unexpected response."""
     responses.post(
-        f"{ANDREWS_ARNOLD_URL}/broadband/quota",
+        f"{ANDREWS_ARNOLD_URL}/broadband/info",
         status=200,
         headers={"Content-Type": "plain/text"},
         body="Yes",
     )
     with pytest.raises(AndrewsArnoldError):
-        assert await client.get_quotas()
+        assert await client.get_info()
 
 
 async def test_timeout(
@@ -104,33 +104,33 @@ async def test_timeout(
         await asyncio.sleep(2)
         return CallbackResult(body="Goodmorning!")
 
-    url = URL(ANDREWS_ARNOLD_URL).joinpath("broadband/quota")
+    url = URL(ANDREWS_ARNOLD_URL).joinpath("broadband/info")
     responses.post(
         url,
         callback=response_handler,
     )
     async with AndrewsArnoldClient(request_timeout=1) as client:
         with pytest.raises(AndrewsArnoldConnectionError):
-            assert await client.get_quotas()
+            assert await client.get_info()
 
 
-async def test_quotas(
+async def test_info(
     responses: aioresponses,
     client: AndrewsArnoldClient,
     snapshot: SnapshotAssertion,
 ) -> None:
-    """Test retrieving quotas."""
+    """Test retrieving info."""
 
-    url = URL(ANDREWS_ARNOLD_URL).joinpath("broadband/quota")
+    url = URL(ANDREWS_ARNOLD_URL).joinpath("broadband/info")
     responses.post(
         url,
         status=200,
-        body=load_fixture("broadband_quota.json"),
+        body=load_fixture("broadband_info.json"),
     )
-    assert await client.get_quotas() == snapshot
+    assert await client.get_info() == snapshot
 
     responses.assert_called_once_with(
-        f"{ANDREWS_ARNOLD_URL}/broadband/quota",
+        f"{ANDREWS_ARNOLD_URL}/broadband/info",
         METH_POST,
         headers=HEADERS,
         params=None,

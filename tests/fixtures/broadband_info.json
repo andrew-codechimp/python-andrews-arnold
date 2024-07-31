@@ -1,10 +1,10 @@
 {
     "subsystem": "broadband",
-    "command": "quota",
+    "command": "info",
     "request": {
         "control_login": "something@a",
         "control_password": "(redacted)",
-        "uuid": "aba0f976-4dd1-12ef-9957-525600c764e2",
+        "uuid": "2e9954e98-4f24-17bf-a598-525371c768e2",
         "seq": "1"
     },
     "prices": {
@@ -50,7 +50,7 @@
         ]
     },
     "state": {
-        "uuid": "aba0f976-4dd1-12ef-9957-525600c764e2",
+        "uuid": "2e9954e98-4f24-17bf-a598-525371c768e2",
         "seq": "1"
     },
     "options": [
@@ -62,7 +62,7 @@
                     "type": "text",
                     "title": "Control login (e.g. something@a)",
                     "size": "60",
-                    "value": "something@a"
+                    "value": "le4@a"
                 },
                 {
                     "name": "control_password",
@@ -85,8 +85,8 @@
                             "title": "Select service"
                         },
                         {
-                            "value": "54321",
-                            "title": "EX1 4MP something@a"
+                            "value": "12345",
+                            "title": "XX1 1XX something4@a"
                         }
                     ]
                 }
@@ -96,12 +96,16 @@
             "title": "Service Details"
         }
     ],
-    "quota": [
+    "info": [
         {
-            "ID": "54321",
+            "ID": "12345",
+            "login": "something4@a",
+            "postcode": "XX1 1XX",
+            "rx_rate": "7272000",
+            "tx_rate_adjusted": "944955500",
             "quota_monthly": "10000000000000",
-            "quota_remaining": "18897654553833",
-            "quota_timestamp": "2024-07-29 14:00:00"
+            "quota_remaining": "18881390851534",
+            "quota_timestamp": "2024-07-31 10:00:00"
         }
     ]
 }

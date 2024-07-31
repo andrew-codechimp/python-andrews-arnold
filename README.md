@@ -30,7 +30,7 @@ client = AndrewsArnoldClient(
     control_login="something@a", control_password="password"
 )
 
-quota_response = await client.get_quotas()
+info_response = await client.get_info()
 ```
 
 ## Changelog & Releases

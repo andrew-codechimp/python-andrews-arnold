@@ -9,7 +9,7 @@ from aioandrewsarnold.exceptions import (
     AndrewsArnoldNotFoundError,
 )
 from aioandrewsarnold.andrewsarnold import AndrewsArnoldClient
-from aioandrewsarnold.models import QuotaResponse, Quota
+from aioandrewsarnold.models import InfoResponse, Info
 
 __all__ = [
     "AndrewsArnoldConnectionError",
@@ -19,6 +19,6 @@ __all__ = [
     "AndrewsArnoldNotFoundError",
     "AndrewsArnoldValidationError",
     "AndrewsArnoldClient",
-    "QuotaResponse",
-    "Quota",
+    "InfoResponse",
+    "Info",
 ]

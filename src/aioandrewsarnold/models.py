@@ -10,19 +10,21 @@ from mashumaro.mixins.orjson import DataClassORJSONMixin
 
 
 @dataclass
-class QuotaResponse(DataClassORJSONMixin):
-    """QuotaResponse model."""
+class InfoResponse(DataClassORJSONMixin):
+    """InfoResponse model."""
 
-    quotas: Optional[list[Quota]] = field(
-        default=None, metadata=field_options(alias="quota")
+    services: Optional[list[Info]] = field(
+        default=None, metadata=field_options(alias="info")
     )
     error: Optional[str] = None
 
 
 @dataclass
-class Quota(DataClassORJSONMixin):
-    """Quota model."""
+class Info(DataClassORJSONMixin):
+    """Info model."""
 
     service_id: str = field(metadata=field_options(alias="ID"))
-    quota_monthly: str = field(metadata=field_options(alias="quota_monthly"))
-    quota_remaining: str = field(metadata=field_options(alias="quota_remaining"))
+    login: str
+    postcode: str
+    quota_monthly: str
+    quota_remaining: str
